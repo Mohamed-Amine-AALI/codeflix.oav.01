@@ -22,11 +22,15 @@ function parseINI(fileName) {
             newSectionData = {};
             // Regex to extrat section name which is between '[' and ']'
             newSectionName = line.match(/(?<=\[)(.*?)(?=\])/gm)[0].toString();
-            writtenObject[newSectionName] = {};
+            if (newSectionName != "PHP")
+                writtenObject["PHP"][newSectionName] = {};
+            else writtenObject[newSectionName] = {};
         }
         else if (!isSection && Object.keys(newSectionData).length == 0) {
             let splitForSection = line.match(/(\w+)*=*(\w+)/gm); // Regex to extract data between "="
-            writtenObject[newSectionName][splitForSection[0]] = splitForSection[1];
+            if (newSectionName != "PHP")
+                writtenObject["PHP"][newSectionName][splitForSection[0]] = splitForSection[1];
+            else writtenObject[newSectionName][splitForSection[0]] = splitForSection[1];
         }
     });
 

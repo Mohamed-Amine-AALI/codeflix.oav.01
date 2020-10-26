@@ -43,87 +43,87 @@
         "extension=mcrypt": "so",
         "extension=gettext": "so",
         "extension=pgsql": "so",
-        "extension=pdo_pgsql": "so"
-    },
-    "Date": {
-        "date": "timezone"
-    },
-    "Syslog": {
-        "define_syslog_variables": "Off"
-    },
-    "mail function": {
-        "SMTP": "localhost",
-        "smtp_port": "25"
-    },
-    "Java": {},
-    "SQL": {
-        "sql": "safe_mode"
-    },
-    "ODBC": {
-        "odbc": "defaultbinmode"
-    },
-    "MySQL": {
-        "mysql": "trace_mode"
-    },
-    "MySQLi": {
-        "mysqli": "default_socket"
-    },
-    "mSQL": {
-        "msql": "max_links"
-    },
-    "PostgresSQL": {
-        "pgsql": "log_notice"
-    },
-    "Sybase": {
-        "sybase": "compatability_mode"
-    },
-    "Sybase-CT": {
-        "sybct": "min_client_severity"
-    },
-    "dbx": {
-        "dbx": "colnames_case"
-    },
-    "bcmath": {
-        "bcmath": "scale"
-    },
-    "browscap": {},
-    "Informix": {
-        "ifx": "nullformat"
-    },
-    "Session": {
-        "session": "use_trans_sid",
-        "url_rewriter": "tags"
-    },
-    "MSSQL": {
-        "mssql": "secure_connection"
-    },
-    "Assertion": {},
-    "Ingres II": {
-        "ingres": "default_password"
-    },
-    "Verisign Payflow Pro": {
-        "pfpro": "defaulttimeout"
-    },
-    "Sockets": {
-        "sockets": "use_system_read"
-    },
-    "com": {},
-    "Printer": {},
-    "mbstring": {},
-    "FrontBase": {},
-    "Crack": {},
-    "exif": {
-        "eaccelerator": "allowed_admin_path"
-    },
-    "xcache-common": {},
-    "xcache.admin": {
-        "xcache": "admin"
-    },
-    "xcache": {
-        "xcache": "optimizer"
-    },
-    "xcache.coverager": {
-        "xcache": "coveragedump_directory"
-    },
-    "xdebug": {}
+        "extension=pdo_pgsql": "so",
+        "Date": {
+            "date": "timezone"
+        },
+        "Syslog": {
+            "define_syslog_variables": "Off"
+        },
+        "mail function": {
+            "SMTP": "localhost",
+            "smtp_port": "25"
+        },
+        "Java": {},
+        "SQL": {
+            "sql": "safe_mode"
+        },
+        "ODBC": {
+            "odbc": "defaultbinmode"
+        },
+        "MySQL": {
+            "mysql": "trace_mode"
+        },
+        "MySQLi": {
+            "mysqli": "default_socket"
+        },
+        "mSQL": {
+            "msql": "max_links"
+        },
+        "PostgresSQL": {
+            "pgsql": "log_notice"
+        },
+        "Sybase": {
+            "sybase": "compatability_mode"
+        },
+        "Sybase-CT": {
+            "sybct": "min_client_severity"
+        },
+        "dbx": {
+            "dbx": "colnames_case"
+        },
+        "bcmath": {
+            "bcmath": "scale"
+        },
+        "browscap": {},
+        "Informix": {
+            "ifx": "nullformat"
+        },
+        "Session": {
+            "session": "use_trans_sid",
+            "url_rewriter": "tags"
+        },
+        "MSSQL": {
+            "mssql": "secure_connection"
+        },
+        "Assertion": {},
+        "Ingres II": {
+            "ingres": "default_password"
+        },
+        "Verisign Payflow Pro": {
+            "pfpro": "defaulttimeout"
+        },
+        "Sockets": {
+            "sockets": "use_system_read"
+        },
+        "com": {},
+        "Printer": {},
+        "mbstring": {},
+        "FrontBase": {},
+        "Crack": {},
+        "exif": {
+            "eaccelerator": "allowed_admin_path"
+        },
+        "xcache-common": {},
+        "xcache.admin": {
+            "xcache": "admin"
+        },
+        "xcache": {
+            "xcache": "optimizer"
+        },
+        "xcache.coverager": {
+            "xcache": "coveragedump_directory"
+        },
+        "xdebug": {}
+    }
 }
