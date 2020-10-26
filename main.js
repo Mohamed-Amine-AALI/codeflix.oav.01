@@ -8,7 +8,7 @@ function parseINI(fileName) {
     let lines = str.match(pattern);
     let newSectionData;
     let newSectionName;
-    let writtenObject = { };
+    let writtenObject = {};
 
     lines.forEach(line => {
         let isSection = /^\[+?/.test(line); // Regex to check if line is section "[...]"
