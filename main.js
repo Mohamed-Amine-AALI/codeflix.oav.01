@@ -17,7 +17,7 @@ function parseINI(fileName) {
             writtenObject[split[0]] = split[1];
         }
         else if (isSection) {
-            if (newSectionData != null && Object.keys(newSectionData).keys > 0)
+            if (newSectionData != null && Object.keys(newSectionData).length > 0)
                 writtenObject[newSectionName] = newSectionData;
             newSectionData = {};
             // Regex to extrat section name which is between '[' and ']'
