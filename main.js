@@ -2,27 +2,37 @@ const fs = require('fs');
 const path = require('path');
 
 function parseINI(fileName) {
+
     let str = fs.readFileSync(fileName).toString();
     let pattern = /^((?!;).)+$/gm; // Match without comments
     let result = str.match(pattern);
-    let objectFound = false;
-    let object = { PHP: {} };
-    let newObject;
+    let newSectionData;
+    let newSectionName;
+    let writtenObject = { };
+
     for (let i = 0; i < result.length; i++) {
-        if (result[i].charAt(0) != '[' && objectFound == false) {
-            var split = result[i].split('=');
-            /* var split = result[i].match(/(?!\s+=\s+)/gm); */
-            object.PHP[split[0].trim()] = split[1].trim();
+        console.log(result[i]);
+        let isSection = /^\[+?/.test(result[i]); // patern is object
+        if (!isSection && newSectionData == null) {
+            let split = result[i].match(/(\w+)*=*(\w+)/gm); // extract delimiter =
+            writtenObject[split[0]] = split[1];
         }
-        /* else {
-            if (newObject == null) {
-                objectFound = true;
-                console.log("objet !" + result[i]);
-                newObject = {};
+        else if (isSection) {
+            if (newSectionData != null && Object.keys(newSectionData).keys > 0) {
+                writtenObject[newSectionName] = newSectionData;
             }
-        } */
+            newSectionData = {};
+            newSectionName = result[i].match(/(?<=\[)(.*?)(?=\])/gm)[0].toString();
+            console.log("SECTION NAME : " + newSectionName)
+            writtenObject[newSectionName] = {};
+        }
+        else if (!isSection && Object.keys(newSectionData).length == 0) {
+            let splitForSection = result[i].match(/(\w+)*=*(\w+)/gm); // extract delimiter =
+            writtenObject[newSectionName][splitForSection[0]] = splitForSection[1];
+        }
+        
     }
-    console.log(JSON.stringify(object));
+    console.log(JSON.stringify(writtenObject));
 
 }
 
