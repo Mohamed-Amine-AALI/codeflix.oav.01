@@ -1,0 +1,129 @@
+{
+    "PHP": {
+        "engine": "On",
+        "short_open_tag": "On",
+        "asp_tags": "Off",
+        "precision": "12",
+        "y2k_compliance": "On",
+        "output_buffering": "Off",
+        "zlib": "output_compression",
+        "implicit_flush": "Off",
+        "serialize_precision": "100",
+        "safe_mode": "Off",
+        "safe_mode_gid": "Off",
+        "safe_mode_allowed_env_vars": "PHP_",
+        "safe_mode_protected_env_vars": "LD_LIBRARY_PATH",
+        "expose_php": "On",
+        "error_reporting": "E_ALL",
+        "display_errors": "Off",
+        "display_startup_errors": "Off",
+        "log_errors": "On",
+        "log_errors_max_len": "1024",
+        "ignore_repeated_errors": "Off",
+        "ignore_repeated_source": "Off",
+        "report_memleaks": "On",
+        "track_errors": "Off",
+        "error_log": "Applications",
+        "variables_order": "EGPCS",
+        "register_globals": "Off",
+        "register_argc_argv": "On",
+        "post_max_size": "32M",
+        "gpc_order": "GPC",
+        "magic_quotes_sybase": "Off",
+        "default_mimetype": "text",
+        "include_path": "Applications",
+        "extension_dir": "Applications",
+        "enable_dl": "On",
+        "file_uploads": "On",
+        "upload_tmp_dir": "Applications",
+        "upload_max_filesize": "32M",
+        "allow_url_fopen": "On",
+        "default_socket_timeout": "60",
+        "extension=imap": "so",
+        "extension=mcrypt": "so",
+        "extension=gettext": "so",
+        "extension=pgsql": "so",
+        "extension=pdo_pgsql": "so"
+    },
+    "Date": {
+        "date": "timezone"
+    },
+    "Syslog": {
+        "define_syslog_variables": "Off"
+    },
+    "mail function": {
+        "SMTP": "localhost",
+        "smtp_port": "25"
+    },
+    "Java": {},
+    "SQL": {
+        "sql": "safe_mode"
+    },
+    "ODBC": {
+        "odbc": "defaultbinmode"
+    },
+    "MySQL": {
+        "mysql": "trace_mode"
+    },
+    "MySQLi": {
+        "mysqli": "default_socket"
+    },
+    "mSQL": {
+        "msql": "max_links"
+    },
+    "PostgresSQL": {
+        "pgsql": "log_notice"
+    },
+    "Sybase": {
+        "sybase": "compatability_mode"
+    },
+    "Sybase-CT": {
+        "sybct": "min_client_severity"
+    },
+    "dbx": {
+        "dbx": "colnames_case"
+    },
+    "bcmath": {
+        "bcmath": "scale"
+    },
+    "browscap": {},
+    "Informix": {
+        "ifx": "nullformat"
+    },
+    "Session": {
+        "session": "use_trans_sid",
+        "url_rewriter": "tags"
+    },
+    "MSSQL": {
+        "mssql": "secure_connection"
+    },
+    "Assertion": {},
+    "Ingres II": {
+        "ingres": "default_password"
+    },
+    "Verisign Payflow Pro": {
+        "pfpro": "defaulttimeout"
+    },
+    "Sockets": {
+        "sockets": "use_system_read"
+    },
+    "com": {},
+    "Printer": {},
+    "mbstring": {},
+    "FrontBase": {},
+    "Crack": {},
+    "exif": {
+        "eaccelerator": "allowed_admin_path"
+    },
+    "xcache-common": {},
+    "xcache.admin": {
+        "xcache": "admin"
+    },
+    "xcache": {
+        "xcache": "optimizer"
+    },
+    "xcache.coverager": {
+        "xcache": "coveragedump_directory"
+    },
+    "xdebug": {}
+}

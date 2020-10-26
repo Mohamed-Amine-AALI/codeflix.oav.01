@@ -5,16 +5,15 @@ function parseINI(fileName) {
 
     let str = fs.readFileSync(fileName).toString();
     let pattern = /^((?!;).)+$/gm; // Match without comments ";"
-    let result = str.match(pattern);
+    let lines = str.match(pattern);
     let newSectionData;
     let newSectionName;
     let writtenObject = { };
 
-    for (let i = 0; i < result.length; i++) {
-        console.log(result[i]);
-        let isSection = /^\[+?/.test(result[i]); // Regex to check if line is section "[...]"
+    lines.forEach(line => {
+        let isSection = /^\[+?/.test(line); // Regex to check if line is section "[...]"
         if (!isSection && newSectionData == null) {
-            let split = result[i].match(/(\w+)*=*(\w+)/gm); // Regex to extract data between "="
+            let split = line.match(/(\w+)*=*(\w+)/gm); // Regex to extract data between "="
             writtenObject[split[0]] = split[1];
         }
         else if (isSection) {
@@ -22,16 +21,21 @@ function parseINI(fileName) {
                 writtenObject[newSectionName] = newSectionData;
             newSectionData = {};
             // Regex to extrat section name which is between '[' and ']'
-            newSectionName = result[i].match(/(?<=\[)(.*?)(?=\])/gm)[0].toString();
+            newSectionName = line.match(/(?<=\[)(.*?)(?=\])/gm)[0].toString();
             writtenObject[newSectionName] = {};
         }
         else if (!isSection && Object.keys(newSectionData).length == 0) {
-            let splitForSection = result[i].match(/(\w+)*=*(\w+)/gm); // Regex to extract data between "="
+            let splitForSection = line.match(/(\w+)*=*(\w+)/gm); // Regex to extract data between "="
             writtenObject[newSectionName][splitForSection[0]] = splitForSection[1];
         }
-        
-    }
-    console.log(JSON.stringify(writtenObject));
+    });
+
+    let jsonToWrite = JSON.stringify(writtenObject);
+    let writeFileName = "php.20181003133700.json";
+    fs.writeFile(writeFileName, jsonToWrite, 'utf8', (err, content) => {
+        if (!err)
+            console.log(`File ${writeFileName} has been successfully created`)
+    });
 
 }
 
