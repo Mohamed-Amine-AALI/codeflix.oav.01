@@ -35,7 +35,7 @@ function parseINI(fileName) {
 
 }
 
-function parseENV() {
+function parseENV(fileName) {
 
 }
 
@@ -45,4 +45,4 @@ let extension = path.extname(fileName)
 if (extension == '.ini')
     parseINI(fileName);
 else if (extension == '.env')
-    parseENV();
+    parseENV(fileName);
